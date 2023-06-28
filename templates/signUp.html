@@ -1,0 +1,34 @@
+{% extends 'base.html' %}
+{% block title %}Create account{% endblock title %}
+{% block body %}
+<div class="max-w-[1536px] container mx-auto flex flex-row ">
+    <div class="basis-[33%]"></div>
+<div class="max-w-[1536px] basis-[33%] mx-auto py-20 grid grid-row-5 text-center">
+  <p class="text-center p-2 m-2 font-medium">
+   Create Your Account
+  </p>
+
+  <div>
+    <style>
+      h5{
+        color: red;
+      }
+    </style>
+  {% for message in messages %}
+  <h5>{{ message }}</h5>
+  {% endfor %}
+  </div>
+
+    <form method="POST" action="">
+      {% csrf_token %}
+<div><input type="email" placeholder="Email" name="email" class="p-2 m-2 rounded-full w-[350px] md:w-[400px] bg-emerald-50"></div>
+<div><input type="text" placeholder="UserName" name="userName" class="p-2 m-2 rounded-full w-[350px] md:w-[400px] bg-emerald-50"></div>
+{% comment %} <div><input type="text" placeholder="Phone no." name="PhoneNo" class="p-2 m-2 rounded-full w-[350px] md:w-[400px] bg-emerald-50"></div> {% endcomment %}
+<div><input type="password" placeholder="Password" name="pass1" class="p-2 m-2 rounded-full w-[350px] md:w-[400px] bg-emerald-50"></div>
+<div><input type="password" placeholder="Confirm password" name="pass2" class="p-2 m-2 rounded-full w-[350px] md:w-[400px] bg-emerald-50"></div>
+<div><input type="submit" value="Create" class="bg-emerald-500 rounded-lg p-2 m-3 text-center border-solid-2 w-[100px] hover:animate-bounce duration-1000"></div>
+</form>
+</div>
+<div class="basis-[33%]"></div>
+</div>
+{% endblock body %}

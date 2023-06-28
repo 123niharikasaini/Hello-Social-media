@@ -1,0 +1,74 @@
+{% extends 'base2.html' %}
+{% block title %}Account Settings{% endblock title %}
+{% block body %}
+<h1>Hey!! <b> {{user.username}}</b></h1>
+<br><hr><br>
+<h1>Account Settings</h1>
+            <div class="Options">
+                <!-- <h5>Profile</h5> -->
+                <a href="#generalform">General</a>
+                <a href="#privacyform">Privacy</a>
+
+            </div>
+            
+            <div class="account">
+                {% comment %} <!-- ----------General part--------- --> {% endcomment %}
+                
+                    <form action="" method="post" enctype="multipart/form-data">
+                        {% comment %}------imp when image is to be submitted--------- enctype="multipart/form-data" -------------------{% endcomment %}
+                        {% csrf_token %}
+                        {% comment %} 
+                    
+                        <div class="item"><label for="firstName">First Name</label>
+                        <input type="text" name="firstName"></div>
+                        <div class="item"><label for="lastName">Last Name</label>
+                        <input type="text" name="lastName"></div>
+                        <div class="item"><label for="email">Enter the email</label> 
+                        <input type="email" name="email"></div>
+                        {% endcomment %}
+                        <div class="form" name="form" id="generalform">
+                        <div class="item"><label for="image">Profile Image</label>
+                            {% comment %} showing the current profile {% endcomment %}
+                            <img width="100" height="100" src="{{user_profile.profileImg.url}}"/>
+                            <input type="file" name="image" value=""></div>
+                        
+                        <div class="item bio"><label for="bio">Bio</label>
+                        <textarea name="bio" id="bio" cols="70" rows="5">{{user_profile.bio}}</textarea></div>
+                        <div class="item">
+                                <label for="location">Location</label>
+                                <select id="location">
+                                <option value="India">India</option>
+                                <option value="India">USA</option>
+                                <option value="India">Korea</option>
+                                <option value="India">Japan</option>
+                                </select>
+                        </div>
+                        {% comment %} <div class="item"><label for="relationship">Relationship status</label>
+                        <select name="relationship" id="relationship">
+                            <option value="Married">Married</option>
+                            <option value="Married">Single</option>
+                        </select></div> {% endcomment %}
+                        <div class="buttons"> 
+                            <div class="Submit but"><input type="Submit" value="Submit"></div>
+                            <div class="Cancel but"><a href="helloHome"><input type="button" value="Cancel"></a></div>
+                        </div>
+
+                    </div>
+                </a>
+                    </form>
+                {% comment %} <!-- ------------General Part ends--------------- --> {% endcomment %}
+                <form action=""method="post">
+                    <div class="form" id="privacyform">
+                        <div class="showAct">
+                            <label for="activity">Show my Activity</label>
+                            <input type="checkbox" name="activity" id="activity" class="toggle">                            
+                        </div>
+                        <div class="showAct">
+                            <label for="activity">Allow Commenting</label>
+                            <input type="checkbox" name="allowCommenting" id="allowCommenting" class="toggle">                            
+                        </div>
+
+                    </div>
+                </form>
+            </div>
+{% endblock body %}

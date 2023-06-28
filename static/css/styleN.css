@@ -1,0 +1,195 @@
+@import url('https://fonts.googleapis.com/css2?family=Pacifico&display=swap');
+
+*{
+    margin: 0;
+    padding: 0;
+}
+body{
+    background: rgb(201, 240, 221);
+    box-sizing: border-box;
+}
+.helloBody{
+    position: relative;
+}
+
+/* nav Bar */
+.navhead{
+    background: rgb(16 185 129);
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    display: flex;
+    /* height: 2.5rem; */
+    padding: 10px;
+}
+
+.logo{
+    font-family: 'Pacifico', cursive;
+    flex-basis: 10%;
+    font-weight: 600;
+    font-size:large;
+}
+
+.spaceBetween{
+    flex-basis: 80%;
+}
+
+.rightNav{
+flex-basis: 10%;
+list-style: none;
+}
+
+.rightNav ul{
+    display: flex;
+    justify-content:space-evenly;
+    
+}
+.rightNav ul li{
+    padding: 5px;
+}
+
+.rightNav ul li:hover{
+    background: rgb(201, 240, 221); 
+    border-radius: 3px;
+}
+
+.subBar{
+    display: none;
+}
+.rightNav ul li:hover .subBar{
+    display: block;
+    position: absolute;
+    background: rgb(16 185 129);
+    /* margin-top: 10px; */
+    margin-left: -50px;
+    
+}
+/* for each option in menu */
+.rightNav ul li:hover .subBar ul{
+    display: block;
+ padding: 5px;
+}
+.rightNav ul li:hover .subBar ul li{
+    width: 150px;
+    padding: 5px;
+    border-bottom: 1px dotted #fff;
+ text-align: left;
+}
+
+/* nav bar ends */
+
+/* ----------main content----------- */
+.mainContent{
+    margin-top: 5rem;
+    display: flex;
+    justify-content: center;
+   }
+   .posts{
+   flex-basis: 80%;
+   padding: 10px;
+   text-align: justify;
+   }
+   
+   .posts h1{
+       font-size: large;
+       font-weight: bold;
+       text-decoration: underline; 
+       text-align: center;
+   }
+   
+   .Options{
+       padding: 2rem;
+       display: flex;
+       font-weight: 500;
+       justify-content: space-evenly;
+   }
+   /* form */
+
+   /* general part */
+   .form{
+       padding: 2rem;
+       margin: 2rem;
+       border-width: 3px;
+       border-radius: 10px;
+       border-color: black;
+       display: grid; 
+       background: rgb(201, 240, 221); 
+   }
+   .form .item{
+       padding: 10px;
+       margin: 10px;
+   }
+   .form .item label{
+       font-size:small;
+       font-weight: 700;
+   }
+   .form .item input{
+       border-radius: 10px;
+       padding:5px;
+       margin-left: 10px;
+       text-decoration: underline;
+       border-bottom: 2px;
+   }
+   .bio{
+       display: flex;
+   }
+   .bio label{
+       align-self: center;
+   }
+   .bio textarea{
+       margin: 10px;
+       border-radius: 10px;
+   
+   }
+   .buttons{
+       display: flex;
+   }
+   .but{
+       display: flex;
+       flex-basis: 50%;
+       padding: 10px;
+       margin: 10px;
+       text-align: center;
+       border-radius: 20px;
+       background-color: rgb(16 185 129);
+       cursor: pointer;
+   }
+   
+   /* general part ends */
+   
+   /* privacy form */
+   .showAct{
+       display: flex;
+   }
+   .showAct input{
+       margin-left:10px;
+   }
+   /* privacy form ends */
+   /* form */
+   
+                    /* main content ends */
+   
+/* ---------------footer-------------- */
+.foot{
+    background: rgb(16 185 129);
+    position: relative;
+    bottom: 0;
+    left: 0;
+    right: 0;
+}
+
+.foot ul{
+    display: flex;
+    justify-items: center;
+    justify-content: space-evenly;
+}
+
+.foot li .contact{
+    margin-left: -5px;
+    padding: 10px;
+    display: flex;
+    justify-content: space-around;
+}
+
+/* footer ends */

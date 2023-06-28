@@ -1,0 +1,72 @@
+{% load static %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{% block title %}{% endblock title %}</title>
+
+    
+    <link rel="stylesheet" href="{% static 'css/styles.css' %}">
+    <link rel="stylesheet" href="{% static 'css/styleN.css' %}">
+    {% block styleLink %}{% endblock styleLink %}
+
+    <!-- for tailwind -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Pacifico&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
+</head>
+
+<body >
+ <div class="helloBody">
+    <!-- Nav Bar -->
+    <nav class="navhead">
+        <div class="logo"><a href="helloHome">Hello</a></div>
+        <div class="spaceBetween"></div>
+        <div class="rightNav">
+            <ul>
+                <li><i class="fa-solid fa-magnifying-glass"></i></li>
+                <li><i class="fa-solid fa-user"></i>
+                    <div class="subBar">
+                        <ul>
+                            <li><a href="#">Profile</a></li>
+                            <li><a href="#">Upload</a></li>
+                            <li><a href="#">Chat</a></li>
+                            <li><a href="settings">Settings</a></li>
+                            <li><a href="signOut">Logout</a></li>
+
+                        </ul>
+                </div>
+                </li>
+            </ul>
+        </div>
+    </nav>
+    <!-- Nav Bar ends -->
+
+    {% comment %} mainContent {% endcomment %}
+    <div class="mainContent">
+        <div class="posts">
+            {% block body %}{% endblock body %}
+        </div>
+    </div>
+    {% comment %} mainContent ends {% endcomment %}
+<!-- footer -->
+    <footer class="foot">
+        <ul>
+            <li><a href="#">About</a></li>
+            <li><a href="#">Services</a></li>
+            <li >Contact Us
+                <div class="contact">
+                <a href="#"><i class="fa-brands fa-twitter"></i></a>
+                <a href="#"><i class="fa-brands fa-instagram"></i></a>
+                <a href="#"><i class="fa-brands fa-linkedin"></i></a>
+                <a href="#"><i class="fa-brands fa-facebook"></i></a>
+                <a href="#"><i class="fa-brands fa-whatsapp"></i></a>
+                </div>
+            </li>
+        </ul>
+    </footer>
+ </div>
+</body>
+</html>

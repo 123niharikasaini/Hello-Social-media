@@ -1,0 +1,36 @@
+{% extends 'base.html' %}
+{% block title %}Welcome{% endblock title %}
+{% block stylelink %}
+
+{% endblock stylelink %}
+{% block body %}
+    <div class="max-w-[1536px] container sticky text-center p-[100px] xs:text-left">
+        <p class="max-w-[1536px] font-Pacifico text-center xs:text-center md:text-4xl p-2 xs:text-s ">Welcome Back..</p>
+        <p class="max-w-[1536px] font-Pacifico text-center xs:text-center md:text-5xl p-2 mt-4 xs:text-m ">Please Sign In</p>
+        <div class="grid grid-row-2 max-w-[1536px] text-center justify-center" >
+          
+          <div>
+            <style>
+              h5{
+                color: red;
+              }
+            </style>
+          {% for message in messages %}
+          <h5>{{ message }}</h5>
+          {% endfor %}
+          </div>
+          <form action="" method="POST" class="max-w-[1536px] xs:m sm:m-2 md:m-3">
+            {% csrf_token %}
+            <div><input type="text" placeholder="Email" name="username" class="max-w-[1536px] bg-emerald-50 sm:p-3 xs:p-2 xs:m-2 sm:m-4 sm:w-[300px] md:[300px] xs:w-[120px] xs:text-center"></div>
+            <div><input type="password" placeholder="Password" name="pass" class="max-w-[1536px] bg-emerald-50 sm:p-3 xs:p-2 sm:m-4 xs:m-2 sm:w-[300px] md:[300px] xs:w-[120px] xs:text-center"></div>
+            <div><button class="border-solid-2 rounded-lg w-[100px] bg-emerald-500 p-2 m-2 hover:animate-bounce duration-1000"  type="submit">Sign In</button>  </div>
+            <div class="max-w-[1536px] xs:align-left m-2">Don't have an account? <a href="signUp" class="text-pink-900">Create One</a></div>
+            <div class="max-w-[1536px] xs:align-left m-2"><a href="forgetPassword" class="text-pink-900">Forget Password?</a></div>
+          </form>
+
+
+      </div>
+    </div>
+
+{% endblock body %}
+    
